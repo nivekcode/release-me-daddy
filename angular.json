@@ -35,6 +35,105 @@
           }
         }
       }
+    },
+    "release-me-daddy-showcase": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/release-me-daddy-showcase",
+      "sourceRoot": "projects/release-me-daddy-showcase/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/release-me-daddy-showcase",
+            "index": "projects/release-me-daddy-showcase/src/index.html",
+            "browser": "projects/release-me-daddy-showcase/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/release-me-daddy-showcase/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/release-me-daddy-showcase/src/favicon.ico",
+              "projects/release-me-daddy-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/release-me-daddy-showcase/src/styles.scss"
+            ],
+            "scripts": [],
+            "server": "projects/release-me-daddy-showcase/src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "projects/release-me-daddy-showcase/server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "release-me-daddy-showcase:build:production"
+            },
+            "development": {
+              "buildTarget": "release-me-daddy-showcase:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "release-me-daddy-showcase:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/release-me-daddy-showcase/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/release-me-daddy-showcase/src/favicon.ico",
+              "projects/release-me-daddy-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/release-me-daddy-showcase/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "cli": {
