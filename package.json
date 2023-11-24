@@ -4,7 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run build:lib && npm run build:showcase",
+    "postbuild:lib": "cp README.md dist/release-me-daddy && cp LICENSE dist/release-me-daddy",
+    "build:lib": "ng build release-me-daddy",
+    "build:showcase": "ng build release-me-daddy-showcase",
     "watch": "ng build --watch --configuration development",
     "format:write": "npm run format:write-lib && npm run format:write-showcase",
     "format:write-lib": "prettier --write \"projects/release-me-daddy/**/*.{ts,js,json,html,scss}\"",
@@ -12,6 +15,7 @@
     "format:check": "npm run format:check-lib && npm run format:check-showcase",
     "format:check-lib": "prettier --check \"projects/release-me-daddy/**/*.{ts,js,json,html,scss}\"",
     "format:check-showcase": "prettier --check \"projects/release-me-daddy-showcase/**/*.{ts,js,json,html,scss}\"",
+    "generate:toc": "npx doctoc README.md",
     "test": "ng test",
     "serve:ssr:release-me-daddy-showcase": "node dist/release-me-daddy-showcase/server/server.mjs"
   },
