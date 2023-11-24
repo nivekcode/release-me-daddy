@@ -20,9 +20,5 @@ jobs:
         run: npm run lint
       - name: Test & Coverage
         run: npm run test:lib-coverage
-      - name: Coveralls GitHub Action
-        uses: coverallsapp/github-action@v2.2.3
       - name: Build
         run: npm run build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
