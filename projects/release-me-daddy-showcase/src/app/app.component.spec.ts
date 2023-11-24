@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have the 'release-me-daddy-showcase' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('release-me-daddy-showcase');
+    expect(app.title).toEqual('Release me daddy showcase');
   });
 
   it('should render title', () => {
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Hello, release-me-daddy-showcase',
+      'Release me daddy showcase'
     );
   });
 });

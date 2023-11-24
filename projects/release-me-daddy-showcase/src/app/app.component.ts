@@ -12,5 +12,5 @@ import { ReleaseMeDaddyComponent } from '../../../release-me-daddy/src/lib/relea
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'release-me-daddy-showcase';
+  title = 'Release me daddy showcase';
 }

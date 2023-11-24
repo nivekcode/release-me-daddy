@@ -19,7 +19,11 @@
     "lint:lib": "eslint \"projects/release-me-daddy/**/*.{ts,js}\" --fix",
     "lint:showcase": "eslint \"projects/release-me-daddy-showcase/**/*.{ts,js}\" --fix",
     "generate:toc": "npx doctoc README.md",
-    "test": "ng test",
+    "test": "npm run test:lib && npm run test:showcase",
+    "test:lib": "ng test release-me-daddy",
+    "test:lib-coverage": "ng test release-me-daddy --code-coverage",
+    "test:showcase-coverage": "ng test release-me-daddy-showcase --code-coverage",
+    "test:showcase": "ng test release-me-daddy-showcase --browsers=ChromeHeadless",
     "serve:ssr:release-me-daddy-showcase": "node dist/release-me-daddy-showcase/server/server.mjs",
     "prepare": "husky install"
   },
