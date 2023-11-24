@@ -25,7 +25,8 @@
     "test:showcase-coverage": "ng test release-me-daddy-showcase --code-coverage",
     "test:showcase": "ng test release-me-daddy-showcase --browsers=ChromeHeadless",
     "serve:ssr:release-me-daddy-showcase": "node dist/release-me-daddy-showcase/server/server.mjs",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "bump-version": "rjp package.json version $VERSION && rjp projects/release-me-daddy/package.json version $VERSION"
   },
   "private": true,
   "dependencies": {
@@ -55,12 +56,18 @@
     "@angular/compiler-cli": "^17.0.0",
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/release-notes-generator": "^12.1.0",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
     "all-contributors-cli": "^6.26.1",
+    "conventional-changelog-conventionalcommits": "^7.0.2",
     "eslint": "^8.53.0",
     "husky": "^8.0.3",
     "jasmine-core": "~5.1.0",
@@ -72,6 +79,7 @@
     "ng-packagr": "^17.0.0",
     "prettier": "^2.8.8",
     "pretty-quick": "^3.1.3",
+    "replace-json-property": "^1.9.0",
     "typescript": "~5.2.2"
   }
 }
