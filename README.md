@@ -1,6 +1,9 @@
 # ReleaseMeDaddy
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This is is a demo project that shows how to release a library to npm.
@@ -11,6 +14,8 @@ This is is a demo project that shows how to release a library to npm.
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Contributors ✨](#contributors-)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Installation
@@ -23,11 +28,9 @@ npm i release-me-daddy
 
 ```typescript
 @Component({
-  selector: 'my-component',
-  template: `
-    <release-me-daddy/>
-  `,
-  imports: [ReleaseMeDaddyComponent]
+  selector: "my-component",
+  template: ` <release-me-daddy /> `,
+  imports: [ReleaseMeDaddyComponent],
 })
 export class MyComponent {}
 ```
